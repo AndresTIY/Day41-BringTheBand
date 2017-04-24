@@ -16,10 +16,14 @@ class BtbHeader extends React.Component {
   render() {
     return (
       <header>
-        <button>Login</button>
-        <button>Signup</button>
+        <div className="buttons-left">
+          <button>Login</button>
+          <button>Signup</button>
+        </div>
         <h1>Dres Music Hall</h1>
-        <BtbNavLinks />
+        <div className="nav-right">
+          <BtbNavLinks />
+        </div>
       </header>
     );
   }
