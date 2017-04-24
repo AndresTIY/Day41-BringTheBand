@@ -17,7 +17,7 @@ export default function app() {
         <div>
 
           <Route path="/" component={AppRoot} />
-          <Route exact path="/search" component={BtbSearch} />
+          <Route path="/search" component={BtbSearch} />
           <Route exact path="/voted" component={BtbVoted} />
 
         </div>

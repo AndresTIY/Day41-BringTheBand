@@ -5,6 +5,9 @@ header{
   display: block;
   clear: both;
   overflow: hidden;
+  padding: 0 .5rem;
+
+
   *{
     display: inline-block;
   }
@@ -19,5 +22,36 @@ header{
   }
   li {
     margin: 0 .5rem;
+  }
+  //login card
+  .login {
+    margin: 1rem 0;
+    * {
+      display: block;
+    }
+    
+    button {
+      margin: .5rem auto 0 auto;
+    }
+  }
+}
+
+//search card
+.search-card {
+  text-align: center;
+  .search-child {
+    border: 1px solid black;
+    padding: 1rem;
+    width: 50%;
+    margin: 4rem auto;
+    h2 {
+      margin-top: 0;
+
+    }
+    input, button {
+      display: block;
+      margin: 1rem auto;
+    }
+
   }
 }

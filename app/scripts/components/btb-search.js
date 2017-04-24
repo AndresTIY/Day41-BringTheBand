@@ -6,25 +6,28 @@ class BtbSearch extends React.Component {
     super(props);
     this.state = {};
 
-    this.handleChange = this.handleChange.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
   }
 
-  handleChange(e) {
-    this.setState({
-      name: e.target.value
-    });
+  handleSearch(e) {
+    e.preventDefault(); //prevents page from reloading
+    let bandToSearch = this.refs.bandname.value;
+    console.log(bandToSearch);
   }
 
   render() {
     return (
-      <section>
-        <h2>Please contact Us</h2>
-        <form>
-          <input type="text" onChange={this.handleChange} defaultValue="name" />
-          <input type="email" defaultValue="email" />
-          <input type="submit" value="Send" />
-        </form>
-        <Link to="/about">Learn About Us</Link>
+      <section className="search-card">
+        <h3>
+          We are currently booking bands based on what our audience want! Search for your band and vote for them!
+        </h3>
+        <div className="search-child">
+          <h2>Search Here</h2>
+          <form onSubmit={this.handleSearch}>
+            <input ref="bandname" type="text" placeholder="Search Here" />
+            <button type="submit">Search</button>
+          </form>
+        </div>
       </section>
     );
   }

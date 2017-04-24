@@ -20,15 +20,22 @@ Theoretical local music venue asked to build a promotional app called Bring The 
 
 ##### Checklist
 Login/Sign Up
-- [ ] in Header?
+- [ ] Login Button, on Click ->
+- [ ] Hides login/signup buttons
+  - [ ] Displays email, pw inputs, submit button
+  - [ ]
+  - [ ]
 
-- [ ]
-- [ ]
-- [ ]
+- [ ] Sign up Button, on Click ->
+  - [ ] Hides login/signup buttons
+  - [ ] Displays username, email, pw inputs, submit button
+  - [ ]
+  - [ ]
+
 ---
 Search Page
-- [ ] Input: Search Field
-- [ ] Button: submits Input with "ENTER" or "onClick"
+- [X] Input: Search Field
+- [X] Button: submits Input with "ENTER" or "onClick"
 - [ ] Results: List of bands
   - [ ] Each Band: Display IMAGE and BAND NAME
   - [ ] Tests for any custom functions created on components and actions
@@ -41,6 +48,10 @@ Votes Page
   - [ ] Tests for any custom functions created on components and actions
 - [ ]
 - [ ]
+---
+Models
+- [ ] Bands Voted for kept in Backendless server
+- [ ] User info kept in server
 
 ##### User Stories
 - As a User, I can search for bands
@@ -54,7 +65,7 @@ Votes Page
 
 Monday
 - [ ] Login/Sign up Functionality
-- [ ] Search Page with buttons and input
+- [X] Search Page with buttons and input
 - [ ] Populate some data
 Tues
 - [ ] Results Page
