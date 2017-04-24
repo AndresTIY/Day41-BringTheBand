@@ -1,33 +1,85 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import BtbNavLinks from "./btb-navlinks.js";
+import userLogin from "../actions/btb-login.js";
+import createUser from "../actions/btb_create_user.js";
 
 class BtbHeader extends React.Component {
   constructor(props) {
     super(props);
-    this.login = this.login.bind(this);
+    this.state = {
+      loginClick: false,
+      signupClick: false
+    };
+
+    this.loginRender = this.loginRender.bind(this);
+    this.signupRender = this.signupRender.bind(this);
+    this.loginUser = this.loginUser.bind(this);
+    this.signupUser = this.signupUser.bind(this);
   }
 
-  handleChange(e) {
+  loginRender() {
     this.setState({
-      name: e.target.value
+      loginClick: !this.state.loginClick
     });
   }
-  login(e) {
-    console.log("ya");
+  signupRender() {
+    this.setState({
+      signupClick: !this.state.signupClick
+    });
+  }
+  loginUser() {
+    let email = this.refs.loginEmail.value;
+    let pw = this.refs.loginPw.value;
+    console.log(email, pw);
+    userLogin(email, pw);
+  }
+
+  signupUser() {
+    let email = this.refs.signupEmail.value;
+    let pw = this.refs.signupPw.value;
+    let name = this.refs.signupName.value;
+    console.log(name, email, pw);
+    createUser(name, email, pw);
   }
 
   render() {
+    let hideClass = "hidden";
+    let hideSignup = "hidden";
+    let showClass = "show";
+    if (this.state.loginClick) {
+      hideClass = "show";
+      showClass = "hidden";
+    }
+    if (this.state.signupClick) {
+      showClass = "hidden";
+      hideSignup = "show";
+    }
     return (
       <header>
-        <div className="buttons-left login">
-          <input placeholder="email" type="text" />
-          <input placeholder="password" type="text" />
-          <button>Login</button>
+        <div className={"buttons-left login " + hideClass}>
+          <input
+            ref="loginEmail"
+            placeholder="email"
+            type="text"
+            value="user@example.com"
+          />
+          <input
+            ref="loginPw"
+            placeholder="password"
+            type="text"
+            value="password"
+          />
+          <button onClick={this.loginUser}>Login</button>
         </div>
-        <div className="buttons-left hidden">
-          <button onClick={this.login}>Login</button>
-          <button>Signup</button>
+        <div className={"buttons-left login " + hideSignup}>
+          <input ref="signupName" placeholder="username" type="text" />
+          <input ref="signupEmail" placeholder="email" type="text" />
+          <input ref="signupPw" placeholder="password" type="password" />
+          <button onClick={this.signupUser}>Signup</button>
+        </div>
+        <div className={"buttons-left " + showClass}>
+          <button onClick={this.loginRender}>Login</button>
+          <button onClick={this.signupRender}>Signup</button>
         </div>
         <h1>Dres Music Hall</h1>
         <div className="nav-right">

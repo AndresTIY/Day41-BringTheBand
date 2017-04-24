@@ -20,15 +20,15 @@ Theoretical local music venue asked to build a promotional app called Bring The 
 
 ##### Checklist
 Login/Sign Up
-- [ ] Login Button, on Click ->
-- [ ] Hides login/signup buttons
-  - [ ] Displays email, pw inputs, submit button
-  - [ ]
+- [X] Login Button, on Click ->
+  - [X] Hides login/signup buttons
+  - [X] Displays email, pw inputs, submit button
+  - [ ] Validates user and gets token
   - [ ]
 
 - [ ] Sign up Button, on Click ->
-  - [ ] Hides login/signup buttons
-  - [ ] Displays username, email, pw inputs, submit button
+  - [X] Hides login/signup buttons
+  - [X] Displays username, email, pw inputs, submit button
   - [ ]
   - [ ]
 
