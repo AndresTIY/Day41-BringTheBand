@@ -6,23 +6,20 @@ import { Provider } from "react-redux";
 import AppRoot from "./components/app_root.js";
 import About from "./components/about.js";
 import Contact from "./components/contact.js";
-
-const Nav = () => (
-  <nav>
-    <li><Link to="/about">About</Link></li>
-    <li><Link to="/contact-us">Contact</Link></li>
-  </nav>
-);
+import BtbHeader from "./components/btb-header.js";
+import BtbSearch from "./components/btb-search.js";
+import BtbVoted from "./components/btb-voted.js";
 
 export default function app() {
   render(
     <Provider store={store}>
       <Router>
         <div>
-          <Nav />
-          <Route exact path="/" component={AppRoot} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/contact-us" component={Contact} />
+
+          <Route path="/" component={AppRoot} />
+          <Route exact path="/search" component={BtbSearch} />
+          <Route exact path="/voted" component={BtbVoted} />
+
         </div>
       </Router>
     </Provider>,

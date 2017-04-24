@@ -20,7 +20,8 @@ Theoretical local music venue asked to build a promotional app called Bring The 
 
 ##### Checklist
 Login/Sign Up
-- [ ]
+- [ ] in Header?
+
 - [ ]
 - [ ]
 - [ ]
@@ -59,8 +60,6 @@ Tues
 - [ ] Results Page
 - [ ] Voting Functionality
 - [ ] Band Cards
-
-
 Wednesday
 
 Thurs
