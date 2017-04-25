@@ -29,7 +29,7 @@ header{
     * {
       display: block;
     }
-    
+
     button {
       margin: .5rem auto 0 auto;
     }
@@ -53,5 +53,18 @@ header{
       margin: 1rem auto;
     }
 
+  }
+}
+//band card
+.band-card{
+  border: 1px solid black;
+  display: inline-block;
+  width: 25%;
+  margin: 1rem;
+  padding: 1rem;
+  .band-img {
+    border: 1px solid black;
+    width: 200px;
+    height: 200px;
   }
 }

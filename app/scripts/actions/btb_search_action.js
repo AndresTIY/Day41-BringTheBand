@@ -1,11 +1,14 @@
 import api from "../api.js";
 export default function searchSpotify(searchQuery) {
-  $.ajax({
-    url: `${api.spotifyGet}`,
-    method: "GET"
-  }).then(function(data, success, xhr) {
-    console.log(data);
-  });
+  return function(dispatch) {
+    $.ajax({
+      url: `${api.spotifyGet}?q=${searchQuery}&type=artist`,
+      method: "GET"
+    }).then(function(data, success, xhr) {
+      console.log(data);
+      dispatch({ type: "LOAD_BAND_SRCH", data: data.artists });
+    });
+  };
 }
 // store.dispatch({
 //   type: "LOAD_DATA",

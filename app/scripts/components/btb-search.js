@@ -1,5 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import searchSpotify from "../actions/btb_search_action.js";
+import BtbSrchResults from "./btb-srch-results.js";
+import { connect } from "react-redux";
 
 class BtbSearch extends React.Component {
   constructor(props) {
@@ -13,6 +16,7 @@ class BtbSearch extends React.Component {
     e.preventDefault(); //prevents page from reloading
     let bandToSearch = this.refs.bandname.value;
     console.log(bandToSearch);
+    this.props.dispatch(searchSpotify(bandToSearch));
   }
 
   render() {
@@ -28,9 +32,10 @@ class BtbSearch extends React.Component {
             <button type="submit">Search</button>
           </form>
         </div>
+        <BtbSrchResults />
       </section>
     );
   }
 }
 
-export default BtbSearch;
+export default connect()(BtbSearch);

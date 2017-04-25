@@ -36,8 +36,8 @@ Login/Sign Up
 Search Page
 - [X] Input: Search Field
 - [X] Button: submits Input with "ENTER" or "onClick"
-- [ ] Results: List of bands
-  - [ ] Each Band: Display IMAGE and BAND NAME
+- [X] Results: List of bands
+  - [X] Each Band: Display IMAGE and BAND NAME
   - [ ] Tests for any custom functions created on components and actions
   - [ ] Should be able to vote for band when band is displayed
   - [ ] When voted for, save band to server
@@ -66,9 +66,9 @@ Models
 Monday
 - [X] Login/Sign up Functionality
 - [X] Search Page with buttons and input
-- [ ] Populate some data
+- [X] Populate some data
 Tues
-- [ ] Results Page
+- [X] Results Page
 - [ ] Voting Functionality
 - [ ] Band Cards
 Wednesday
