@@ -1,11 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
 import container from "../containers/all.js";
+import BtbVote from "./btb-vote.js";
 
 class BtbSrchResults extends React.Component {
   render() {
     if (this.props.bandInfo === undefined) {
-      return <p>nothing to see here</p>;
+      return null;
     } else
       return (
         <div>
@@ -19,6 +20,9 @@ class BtbSrchResults extends React.Component {
               <div className="band-card" key={i}>
                 <p>{data.name}</p>
                 <img className="band-img" src={bandImage} />
+                <BtbVote
+                  handleVote={() => this.props.handleVote(data.name, bandImage)}
+                />
               </div>
             );
           })}

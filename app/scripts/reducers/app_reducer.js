@@ -9,7 +9,7 @@ export default function AppReducer(state, action) {
   switch (action.type) {
     case "TEST_REDUCER":
       // DELETE OR CHANGE ME: I AM JUST AN EXAMPLE
-      return Object.assign({}, state, { newData: " Test reducer dispatched" });
+      return Object.assign({}, state, { newData: "Test reducer dispatched" });
 
     case "USER_LOGGED_IN":
       return Object.assign({}, state, {
@@ -19,6 +19,14 @@ export default function AppReducer(state, action) {
     case "LOAD_BAND_SRCH":
       return Object.assign({}, state, {
         bandInfo: action.data.items
+      });
+
+    case "BAND_VOTE":
+      return Object.assign({}, state, {
+        newBandVoted: {
+          name: action.name,
+          urlImg: action.url
+        }
       });
   }
 

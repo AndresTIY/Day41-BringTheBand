@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import searchSpotify from "../actions/btb_search_action.js";
 import BtbSrchResults from "./btb-srch-results.js";
 import { connect } from "react-redux";
+import addNewBand from "../actions/btb_add_new_band.js";
 
 class BtbSearch extends React.Component {
   constructor(props) {
@@ -10,6 +11,10 @@ class BtbSearch extends React.Component {
     this.state = {};
 
     this.handleSearch = this.handleSearch.bind(this);
+    this.handleVote = this.handleVote.bind(this);
+  }
+  handleVote(name, url) {
+    this.props.dispatch(addNewBand(name, url));
   }
 
   handleSearch(e) {
@@ -32,7 +37,7 @@ class BtbSearch extends React.Component {
             <button type="submit">Search</button>
           </form>
         </div>
-        <BtbSrchResults />
+        <BtbSrchResults handleVote={this.handleVote} />
       </section>
     );
   }

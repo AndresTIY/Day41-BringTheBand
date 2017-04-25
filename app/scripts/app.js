@@ -8,7 +8,7 @@ import About from "./components/about.js";
 import Contact from "./components/contact.js";
 import BtbHeader from "./components/btb-header.js";
 import BtbSearch from "./components/btb-search.js";
-import BtbVoted from "./components/btb-voted.js";
+import BtbVoted from "./components/btb-voted-results.js";
 
 export default function app() {
   render(

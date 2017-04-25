@@ -24,14 +24,10 @@ Login/Sign Up
   - [X] Hides login/signup buttons
   - [X] Displays email, pw inputs, submit button
   - [X] Validates user and gets token
-  - [ ]
 
-- [ ] Sign up Button, on Click ->
+- [X] Sign up Button, on Click ->
   - [X] Hides login/signup buttons
   - [X] Displays username, email, pw inputs, submit button
-  - [ ]
-  - [ ]
-
 ---
 Search Page
 - [X] Input: Search Field
