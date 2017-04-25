@@ -2,6 +2,7 @@ import React from "react";
 import BtbNavLinks from "./btb-navlinks.js";
 import userLogin from "../actions/btb-login.js";
 import createUser from "../actions/btb_create_user.js";
+import { connect } from "react-redux";
 
 class BtbHeader extends React.Component {
   constructor(props) {
@@ -22,24 +23,26 @@ class BtbHeader extends React.Component {
       loginClick: !this.state.loginClick
     });
   }
+
   signupRender() {
     this.setState({
       signupClick: !this.state.signupClick
     });
   }
+
   loginUser() {
     let email = this.refs.loginEmail.value;
     let pw = this.refs.loginPw.value;
     console.log(email, pw);
-    userLogin(email, pw);
+    this.props.dispatch(userLogin(email, pw));
   }
 
   signupUser() {
     let email = this.refs.signupEmail.value;
     let pw = this.refs.signupPw.value;
     let name = this.refs.signupName.value;
-    console.log(name, email, pw);
-    createUser(name, email, pw);
+    console.log(email, name, pw);
+    this.props.dispatch(createUser(name, email, pw));
   }
 
   render() {
@@ -90,4 +93,4 @@ class BtbHeader extends React.Component {
   }
 }
 
-export default BtbHeader;
+export default connect()(BtbHeader);

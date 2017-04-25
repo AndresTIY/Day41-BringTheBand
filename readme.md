@@ -23,7 +23,7 @@ Login/Sign Up
 - [X] Login Button, on Click ->
   - [X] Hides login/signup buttons
   - [X] Displays email, pw inputs, submit button
-  - [ ] Validates user and gets token
+  - [X] Validates user and gets token
   - [ ]
 
 - [ ] Sign up Button, on Click ->
@@ -64,7 +64,7 @@ Models
 ##### Time Management
 
 Monday
-- [ ] Login/Sign up Functionality
+- [X] Login/Sign up Functionality
 - [X] Search Page with buttons and input
 - [ ] Populate some data
 Tues
