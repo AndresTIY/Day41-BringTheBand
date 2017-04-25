@@ -1,33 +1,31 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import retrieveBands from "../actions/btb_load_bands.js";
 
 class BtbVoted extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
-
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(e) {
-    this.setState({
-      name: e.target.value
-    });
   }
 
   render() {
+    this.props.dispatch(retrieveBands());
     return (
-      <section>
-        <h2>Please contact Us</h2>
-        <form>
-          <input type="text" onChange={this.handleChange} defaultValue="name" />
-          <input type="email" defaultValue="email" />
-          <input type="submit" value="Send" />
-        </form>
-        <Link to="/about">Learn About Us</Link>
-      </section>
+      <div>
+        <p>bands voted for!</p>
+      </div>
     );
   }
 }
 
-export default BtbVoted;
+export default connect()(BtbVoted);
+
+// return (
+//   <div className="band-card" key={i}>
+//     <p>{data.name}</p>
+//     <img className="band-img" src={bandImage} />
+//     <BtbVote
+//       handleVote={() => this.props.handleVote(data.name, bandImage)}
+//     />
+//   </div>
+// );

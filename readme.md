@@ -55,7 +55,7 @@ Models
 - As a User, I can log in
 - As a User, I can log out
 - As a User, I can vote for band after I search
-- As a User,
+
 
 ##### Time Management
 
@@ -66,8 +66,9 @@ Monday
 Tues
 - [X] Results Page
 - [ ] Voting Functionality
-- [ ] Band Cards
+- [X] Band Cards
 Wednesday
+- [ ] Materialize!
 
 Thurs
 - [ ] Polish code

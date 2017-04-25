@@ -20,7 +20,6 @@ class BtbSearch extends React.Component {
   handleSearch(e) {
     e.preventDefault(); //prevents page from reloading
     let bandToSearch = this.refs.bandname.value;
-    console.log(bandToSearch);
     this.props.dispatch(searchSpotify(bandToSearch));
   }
 

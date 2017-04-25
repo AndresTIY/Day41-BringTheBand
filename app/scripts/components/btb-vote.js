@@ -1,15 +1,19 @@
 import React from "react";
-import addNewBand from "../actions/btb_add_new_band.js";
 class BtbVote extends React.Component {
   constructor(props) {
     super(props);
   }
 
   render() {
+    let showVote = "show";
+    let hidden = "hidden";
     return (
-      <button onClick={this.props.handleVote}>
-        Vote
-      </button>
+      <div>
+        <p className={hidden}>Thanks for your vote!</p>
+        <button className={showVote} onClick={this.props.handleVote}>
+          Vote
+        </button>
+      </div>
     );
   }
 }

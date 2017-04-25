@@ -3,7 +3,9 @@ import { connect } from "react-redux";
 
 export default function AppReducer(state, action) {
   if (state === undefined) {
-    return {};
+    return {
+      bandsVoted: []
+    };
   }
 
   switch (action.type) {
@@ -22,14 +24,35 @@ export default function AppReducer(state, action) {
       });
 
     case "BAND_VOTE":
+      let bandsVotedOn = state.bandsVoted.slice();
+      let newBandVoted = {
+        name: action.name,
+        image_url: action.url,
+        votes: action.votes
+      };
+      bandsVotedOn.push(newBandVoted);
       return Object.assign({}, state, {
-        newBandVoted: {
-          name: action.name,
-          urlImg: action.url
-        }
+        bandsVoted: bandsVotedOn
       });
+    //make band vote send data to backendless
+
+
+    case "LOAD_VOTED_BANDS":
+      let loadedBands = state.bandsVoted.slice();
+      loadedBands.push(action.bands.data);
+      return Object.assign({}, state, {
+        bandsVoted: loadedBands
+      });
+    // state.bandsVoted.push(action.data)
+    // case "SAVE_VOTED_BAND":
   }
 
   console.log("Unhandled State!");
   return state;
 }
+// case "SAVE_ANSWER":
+//   var surveyAns = state.surveyAnswers.slice();
+//   surveyAns.push(action.answer);
+//   return Object.assign({}, state, {
+//     surveyAnswers: surveyAns
+//   });
