@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 export default function AppReducer(state, action) {
   if (state === undefined) {
     return {
-      bandsVoted: [],
+      bandsVoted: [{ band_name: "" }],
       userInfo: { username: "" }
     };
   }

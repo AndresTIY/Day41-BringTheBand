@@ -1,12 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-
+import retrieveBands from "../actions/btb_load_bands.js";
 import container from "../containers/all.js";
 
 class BtbVoted extends React.Component {
   constructor(props) {
     super(props);
+  }
+  componentDidMount() {
+    this.props.dispatch(retrieveBands());
   }
 
   render() {

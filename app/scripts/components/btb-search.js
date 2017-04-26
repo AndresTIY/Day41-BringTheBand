@@ -16,13 +16,15 @@ class BtbSearch extends React.Component {
     this.handleVote = this.handleVote.bind(this);
   }
   handleVote(name, url) {
-    let currentVotedBand = this.props.bandsVoted.forEach(band => {
-      return band.band_name;
+    this.props.bandsVoted.map(band => {
+      if (band.band_name === name) {
+        console.log("it's a match!");
+        this.props.dispatch(addVote(band.objectId, band.votes));
+      } else {
+        console.log("addNewBand just ran");
+        this.props.dispatch(addNewBand(name, url));
+      }
     });
-    if (currentVotedBand === name) {
-      console.log("its a match!", name);
-    }
-    this.props.dispatch(addNewBand(name, url));
   }
 
   handleSearch(e) {
