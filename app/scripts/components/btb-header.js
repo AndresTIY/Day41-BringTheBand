@@ -81,10 +81,20 @@ class BtbHeader extends React.Component {
           <button onClick={this.signupUser}>Signup</button>
         </div>
         <div className={"buttons-left " + showClass}>
-          <button onClick={this.loginRender}>Login</button>
-          <button onClick={this.signupRender}>Signup</button>
+          <button
+            className="waves-effect waves-light btn"
+            onClick={this.loginRender}
+          >
+            Login
+          </button>
+          <button
+            className="waves-effect waves-light btn"
+            onClick={this.signupRender}
+          >
+            Signup
+          </button>
         </div>
-        <h1>Dres Music Hall</h1>
+        <h3>Dres Music Hall</h3>
         <div className="nav-right">
           <BtbNavLinks />
         </div>

@@ -44,7 +44,13 @@ export default function AppReducer(state, action) {
         bandsVoted: loadedBands
       });
     // state.bandsVoted.push(action.data)
-    // case "SAVE_VOTED_BAND":
+    case "SAVE_VOTED_BAND":
+      let loadedBandState = state.bandsVoted;
+      console.log(loadedBandState);
+      loadedBandState.push(action.band);
+      return Object.assign({}, state, {
+        bandsVoted: loadedBandState
+      });
   }
 
   console.log("Unhandled State!");

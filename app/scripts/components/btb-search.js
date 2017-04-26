@@ -26,11 +26,11 @@ class BtbSearch extends React.Component {
   render() {
     return (
       <section className="search-card">
-        <h3>
+        <h5>
           We are currently booking bands based on what our audience want! Search for your band and vote for them!
-        </h3>
+        </h5>
         <div className="search-child">
-          <h2>Search Here</h2>
+          <h5>Search Here</h5>
           <form onSubmit={this.handleSearch}>
             <input ref="bandname" type="text" placeholder="Search Here" />
             <button type="submit">Search</button>
