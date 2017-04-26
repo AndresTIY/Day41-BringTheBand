@@ -65,7 +65,7 @@ class BtbHeader extends React.Component {
     let hideSignup = "hidden";
     let showClass = "show";
     let welcome = "hidden";
-    let username;
+    let username = "";
     if (this.state.loginClick) {
       hideClass = "show";
       showClass = "hidden";
