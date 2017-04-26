@@ -7,11 +7,8 @@ class BtbNavLinks extends React.Component {
   render() {
     return (
       <nav>
-        <ul className="right ">
-          <li><Link to="/search">Search Bands</Link></li>
-          <li><Link to="/voted">Voted Bands</Link></li>
-        </ul>
-
+        <li><Link to="/search">Search Bands</Link></li>
+        <li><Link to="/voted">Voted Bands</Link></li>
       </nav>
     );
   }

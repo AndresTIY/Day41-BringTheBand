@@ -9,32 +9,30 @@ class BtbSrchResults extends React.Component {
       return null;
     } else
       return (
-        <div className="container">
-          <div className="row">
-            {this.props.bandInfo.map((data, i) => {
-              var bandImage =
-                "http://berg-group.com/wp-content/uploads/2014/11/Photo_not_available-4.jpg";
-              if (data.images.length > 1) {
-                bandImage = data.images[1].url;
-              }
-              return (
-                <div className="col s12 m4 l3 band-card" key={i}>
-                  <div className="card">
-                    <div className="card-image">
-                      <img className="band-img" src={bandImage} />
-                      <span className="card-title">{data.name}</span>
-                    </div>
-                    <div className="card-content">
-                      <BtbVote
-                        handleVote={() =>
-                          this.props.handleVote(data.name, bandImage)}
-                      />
-                    </div>
+        <div className="row">
+          {this.props.bandInfo.map((data, i) => {
+            var bandImage =
+              "http://berg-group.com/wp-content/uploads/2014/11/Photo_not_available-4.jpg";
+            if (data.images.length > 1) {
+              bandImage = data.images[1].url;
+            }
+            return (
+              <div className="col s12 m4 l3 band-card" key={i}>
+                <div className="card">
+                  <div className="card-image">
+                    <img className="band-img" src={bandImage} />
+                    <span className="card-title">{data.name}</span>
+                  </div>
+                  <div className="card-content">
+                    <BtbVote
+                      handleVote={() =>
+                        this.props.handleVote(data.name, bandImage)}
+                    />
                   </div>
                 </div>
-              );
-            })}
-          </div>
+              </div>
+            );
+          })}
         </div>
       );
   }
