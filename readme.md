@@ -36,18 +36,19 @@ Search Page
   - [X] Each Band: Display IMAGE and BAND NAME
   - [ ] Tests for any custom functions created on components and actions
   - [ ] Should be able to vote for band when band is displayed
-  - [ ] When voted for, save band to server
+  - [X] When voted for, save band to server
 ---
 Votes Page
-- [ ] Display: Bands that have been voted for
-  - [ ] Each Band: Display IMAGE and BAND NAME
+- [X] Display: Bands that have been voted for
+  - [X] Each Band: Display IMAGE and BAND NAME
   - [ ] Tests for any custom functions created on components and actions
-- [ ]
-- [ ]
+- [ ] Remove band duplicates
+- [ ] Add votes
+
 ---
 Models
-- [ ] Bands Voted for kept in Backendless server
-- [ ] User info kept in server
+- [X] Bands Voted for kept in Backendless server
+- [X] User info kept in server
 
 ##### User Stories
 - As a User, I can search for bands
@@ -65,10 +66,10 @@ Monday
 - [X] Populate some data
 Tues
 - [X] Results Page
-- [ ] Voting Functionality
 - [X] Band Cards
 Wednesday
-- [ ] Materialize!
+- [ ] Voting Functionality
+- [X] Materialize!
 
 Thurs
 - [ ] Polish code

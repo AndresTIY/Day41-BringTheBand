@@ -1,6 +1,4 @@
-//ajax call
 import api from "../api.js";
-import userLogin from "./btb-login.js";
 import { connect } from "react-redux";
 
 export default function addNewBand(name, url) {

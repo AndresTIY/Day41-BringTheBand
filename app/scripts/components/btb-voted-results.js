@@ -17,14 +17,15 @@ class BtbVoted extends React.Component {
     return (
       <div className="row">
         {this.props.bandsVoted.map((data, i) => {
-          console.log("first map", data);
-          console.log("second map", data);
           return (
             <div className="col s12 m4 l3 band-card" key={i}>
               <div className="medium card">
                 <div className="card-image">
                   <img className="band-img" src={data.image_url} />
                   <span className="card-title">{data.band_name}</span>
+                </div>
+                <div className="card-content">
+                  <p>Votes so far: {data.votes}</p>
                 </div>
               </div>
             </div>
