@@ -3,6 +3,7 @@ import BtbNavLinks from "./btb-navlinks.js";
 import userLogin from "../actions/btb-login.js";
 import createUser from "../actions/btb_create_user.js";
 import container from "../containers/all.js";
+import retrieveBands from "../actions/btb_load_bands.js";
 
 import { connect } from "react-redux";
 
@@ -21,6 +22,9 @@ class BtbHeader extends React.Component {
     this.signupRender = this.signupRender.bind(this);
     this.loginUser = this.loginUser.bind(this);
     this.signupUser = this.signupUser.bind(this);
+  }
+  componentDidMount() {
+    this.props.dispatch(retrieveBands());
   }
 
   loginRender() {

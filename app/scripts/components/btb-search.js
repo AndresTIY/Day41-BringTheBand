@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import container from "../containers/all.js";
 import searchSpotify from "../actions/btb_search_action.js";
 import BtbSrchResults from "./btb-srch-results.js";
-import { connect } from "react-redux";
 import addNewBand from "../actions/btb_add_new_band.js";
+import addVote from "../actions/btb_add_vote.js";
 
 class BtbSearch extends React.Component {
   constructor(props) {
@@ -14,6 +16,12 @@ class BtbSearch extends React.Component {
     this.handleVote = this.handleVote.bind(this);
   }
   handleVote(name, url) {
+    let currentVotedBand = this.props.bandsVoted.forEach(band => {
+      return band.band_name;
+    });
+    if (currentVotedBand === name) {
+      console.log("its a match!", name);
+    }
     this.props.dispatch(addNewBand(name, url));
   }
 
@@ -42,4 +50,4 @@ class BtbSearch extends React.Component {
   }
 }
 
-export default connect()(BtbSearch);
+export default connect(container.allState)(BtbSearch);
