@@ -33,7 +33,7 @@ class BtbHeader extends React.Component {
   loginUser() {
     let email = this.refs.loginEmail.value;
     let pw = this.refs.loginPw.value;
-    console.log(email, pw);
+
     this.props.dispatch(userLogin(email, pw));
   }
 
@@ -41,7 +41,7 @@ class BtbHeader extends React.Component {
     let email = this.refs.signupEmail.value;
     let pw = this.refs.signupPw.value;
     let name = this.refs.signupName.value;
-    console.log(email, name, pw);
+
     this.props.dispatch(createUser(name, email, pw));
   }
 
@@ -60,18 +60,8 @@ class BtbHeader extends React.Component {
     return (
       <header>
         <div className={"buttons-left login " + hideClass}>
-          <input
-            ref="loginEmail"
-            placeholder="email"
-            type="text"
-            value="user@example.com"
-          />
-          <input
-            ref="loginPw"
-            placeholder="password"
-            type="text"
-            value="password"
-          />
+          <input ref="loginEmail" placeholder="email" type="text" />
+          <input ref="loginPw" placeholder="password" type="text" />
           <button onClick={this.loginUser}>Login</button>
         </div>
         <div className={"buttons-left login " + hideSignup}>

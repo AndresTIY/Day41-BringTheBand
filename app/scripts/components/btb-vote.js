@@ -10,7 +10,7 @@ class BtbVote extends React.Component {
     return (
       <div>
         <p className={hidden}>Thanks for your vote!</p>
-        <button className={showVote} onClick={this.props.handleVote}>
+        <button className={"btn " + showVote} onClick={this.props.handleVote}>
           Vote
         </button>
       </div>

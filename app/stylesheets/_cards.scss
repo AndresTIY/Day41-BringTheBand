@@ -57,14 +57,18 @@ header{
 }
 //band card
 .band-card{
-  // border: 1px solid black;
+  overflow: hidden;
+  height: 23rem;
   // display: inline-block;
   // width: 25%;
   // margin: 1rem;
   // padding: 1rem;
-  .band-img {
+  .card-image {
+
+    // width: 12.5rem;
+    background: black;
     border: 1px solid black;
-    width: 12.5rem;
-    height: 12.5rem;
+    min-height: 15rem;
+    height: 15rem;
   }
 }

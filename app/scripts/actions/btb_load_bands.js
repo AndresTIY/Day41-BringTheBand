@@ -9,8 +9,7 @@ export default function retrieveBands() {
         "application-id": api.appId,
         "secret-key": api.restKey
       }
-    }).then(function(bands, success, xhr) {
-      console.log(bands);
+    }).then((bands, success, xhr) => {
       dispatch({ type: "LOAD_VOTED_BANDS", bands: bands });
     });
   };

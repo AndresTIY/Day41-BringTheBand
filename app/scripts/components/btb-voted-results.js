@@ -13,29 +13,26 @@ class BtbVoted extends React.Component {
   }
 
   render() {
-    console.log(this.props.bandsVoted);
-
+    console.log("first line", this.props.bandsVoted);
     return (
-      <div>
-        <p>bands voted for!</p>
+      <div className="row">
+        {this.props.bandsVoted.map((data, i) => {
+          console.log("first map", data);
+          console.log("second map", data);
+          return (
+            <div className="col s12 m4 l3 band-card" key={i}>
+              <div className="medium card">
+                <div className="card-image">
+                  <img className="band-img" src={data.image_url} />
+                  <span className="card-title">{data.band_name}</span>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+
       </div>
     );
   }
 }
-
 export default connect(container.allState)(BtbVoted);
-
-// return (
-//   <div className="band-card" key={i}>
-//     <p>{data.name}</p>
-//     <img className="band-img" src={bandImage} />
-//     <BtbVote
-//       handleVote={() => this.props.handleVote(data.name, bandImage)}
-//     />
-//   </div>
-// );
-// if (this.props.bandsVoted !== undefined) {
-//   return this.props.bandsVoted.map((bands, i) => {
-//     console.log("bands", bands);
-//   });
-// }

@@ -18,7 +18,7 @@ class BtbSrchResults extends React.Component {
             }
             return (
               <div className="col s12 m4 l3 band-card" key={i}>
-                <div className="card">
+                <div className="medium card">
                   <div className="card-image">
                     <img className="band-img" src={bandImage} />
                     <span className="card-title">{data.name}</span>
