@@ -9,7 +9,10 @@ class BtbHeader extends React.Component {
     super(props);
     this.state = {
       loginClick: false,
-      signupClick: false
+      signupClick: false,
+      loggedinUserClick: false,
+      signedupUserClick: false,
+      name: ""
     };
 
     this.loginRender = this.loginRender.bind(this);
@@ -33,8 +36,10 @@ class BtbHeader extends React.Component {
   loginUser() {
     let email = this.refs.loginEmail.value;
     let pw = this.refs.loginPw.value;
-
     this.props.dispatch(userLogin(email, pw));
+    this.setState({
+      loggedinUserClick: !this.state.loggedinUserClick
+    });
   }
 
   signupUser() {
@@ -43,12 +48,17 @@ class BtbHeader extends React.Component {
     let name = this.refs.signupName.value;
 
     this.props.dispatch(createUser(name, email, pw));
+    this.setState({
+      signedupUserClick: !this.state.signedupUserClick,
+      name: name
+    });
   }
 
   render() {
     let hideClass = "hidden";
     let hideSignup = "hidden";
     let showClass = "show";
+    let welcome = "hidden";
     if (this.state.loginClick) {
       hideClass = "show";
       showClass = "hidden";
@@ -57,8 +67,15 @@ class BtbHeader extends React.Component {
       showClass = "hidden";
       hideSignup = "show";
     }
+    if (this.state.loggedinUserClick || this.state.signedupUserClick) {
+      hideClass, (hideSignup = "hidden");
+      welcome = "show";
+    }
     return (
       <header>
+        <div className={"buttons-left " + welcome}>
+          <h5>Welcome {this.state.name}!</h5>
+        </div>
         <div className={"buttons-left login " + hideClass}>
           <input ref="loginEmail" placeholder="email" type="text" />
           <input ref="loginPw" placeholder="password" type="text" />
