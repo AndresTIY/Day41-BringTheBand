@@ -10,12 +10,3 @@ export default function searchSpotify(searchQuery) {
     });
   };
 }
-// store.dispatch({
-//   type: "LOAD_DATA",
-//   ownerId: data.ownerId,
-//   username: data.username,
-//   name: data.fullName,
-//   token: action.token
-// });
-
-// https://api.spotify.com/v1/search?q=car&type=artist

@@ -34,14 +34,12 @@ export default function AppReducer(state, action) {
       return Object.assign({}, state, {
         bandsVoted: bandsVotedOn
       });
-    //make band vote send data to backendless
-
 
     case "LOAD_VOTED_BANDS":
       return Object.assign({}, state, {
         bandsVoted: action.bands.data
       });
-    // state.bandsVoted.push(action.data)
+
     case "SAVE_VOTED_BAND":
       let loadedBandState = state.bandsVoted;
       console.log(loadedBandState);
@@ -54,9 +52,3 @@ export default function AppReducer(state, action) {
   console.log("Unhandled State!");
   return state;
 }
-// case "SAVE_ANSWER":
-//   var surveyAns = state.surveyAnswers.slice();
-//   surveyAns.push(action.answer);
-//   return Object.assign({}, state, {
-//     surveyAnswers: surveyAns
-//   });

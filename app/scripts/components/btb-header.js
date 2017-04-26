@@ -2,6 +2,8 @@ import React from "react";
 import BtbNavLinks from "./btb-navlinks.js";
 import userLogin from "../actions/btb-login.js";
 import createUser from "../actions/btb_create_user.js";
+import container from "../containers/all.js";
+
 import { connect } from "react-redux";
 
 class BtbHeader extends React.Component {
@@ -59,6 +61,7 @@ class BtbHeader extends React.Component {
     let hideSignup = "hidden";
     let showClass = "show";
     let welcome = "hidden";
+    let username;
     if (this.state.loginClick) {
       hideClass = "show";
       showClass = "hidden";
@@ -68,13 +71,21 @@ class BtbHeader extends React.Component {
       hideSignup = "show";
     }
     if (this.state.loggedinUserClick || this.state.signedupUserClick) {
-      hideClass, (hideSignup = "hidden");
+      hideClass = "hidden";
+      hideSignup = "hidden";
       welcome = "show";
+    }
+    if (this.state.loggedinUserClick) {
+      username = this.props.userInfo.username;
+    }
+    if (this.state.signedupUserClick) {
+      username = this.state.name;
     }
     return (
       <header>
         <div className={"buttons-left " + welcome}>
-          <h5>Welcome {this.state.name}!</h5>
+          <h5>Welcome {username}!</h5>
+
         </div>
         <div className={"buttons-left login " + hideClass}>
           <input ref="loginEmail" placeholder="email" type="text" />
@@ -110,4 +121,4 @@ class BtbHeader extends React.Component {
   }
 }
 
-export default connect()(BtbHeader);
+export default connect(container.allState)(BtbHeader);
