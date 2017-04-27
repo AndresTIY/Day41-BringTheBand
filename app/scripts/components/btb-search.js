@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import _ from "lodash";
 import container from "../containers/all.js";
 import searchSpotify from "../actions/btb_search_action.js";
 import BtbSrchResults from "./btb-srch-results.js";
@@ -16,12 +17,16 @@ class BtbSearch extends React.Component {
     this.handleVote = this.handleVote.bind(this);
   }
   handleVote(name, url) {
-    this.props.bandsVoted.map(band => {
-      if (band.band_name === name) {
-        console.log("it's a match!");
+    let runOnce = true;
+
+    this.props.bandsVoted.forEach(band => {
+      if (band.band_name === name && runOnce) {
+        runOnce = false;
+        console.log("it's a match, running addVote", runOnce);
         this.props.dispatch(addVote(band.objectId, band.votes));
-      } else {
-        console.log("addNewBand just ran");
+      } else if (band.band_name !== name && runOnce) {
+        runOnce = false;
+        console.log("addNewBand just ran", runOnce);
         this.props.dispatch(addNewBand(name, url));
       }
     });

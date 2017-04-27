@@ -37,8 +37,12 @@ export default function AppReducer(state, action) {
       });
 
     case "LOAD_VOTED_BANDS":
+      let loadedBands = action.bands.data;
+      if (loadedBands.length <= 0) {
+        loadedBands = state.bandsVoted;
+      }
       return Object.assign({}, state, {
-        bandsVoted: action.bands.data
+        bandsVoted: loadedBands
       });
 
     case "SAVE_VOTED_BAND":

@@ -27,6 +27,7 @@ class BtbSrchResults extends React.Component {
                     <BtbVote
                       handleVote={() =>
                         this.props.handleVote(data.name, bandImage)}
+                      tabindex="2"
                     />
                   </div>
                 </div>
