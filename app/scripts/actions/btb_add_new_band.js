@@ -1,7 +1,7 @@
 import api from "../api.js";
 import { connect } from "react-redux";
 
-export default function addNewBand(name, url) {
+export default function addNewBand(name, url, id) {
   return function(dispatch) {
     $.ajax({
       url: `${api.url}/data/band_table`,
@@ -15,6 +15,7 @@ export default function addNewBand(name, url) {
       data: JSON.stringify({
         band_name: name,
         image_url: url,
+        band_id: id,
         votes: 1
       })
     });

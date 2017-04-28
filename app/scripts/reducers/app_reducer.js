@@ -29,6 +29,7 @@ export default function AppReducer(state, action) {
       let newBandVoted = {
         name: action.name,
         image_url: action.url,
+        band_id: action.band_id,
         votes: action.votes
       };
       bandsVotedOn.push(newBandVoted);

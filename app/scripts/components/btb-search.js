@@ -16,21 +16,30 @@ class BtbSearch extends React.Component {
     this.handleSearch = this.handleSearch.bind(this);
     this.handleVote = this.handleVote.bind(this);
   }
-  handleVote(name, url) {
+  handleVote(name, url, id) {
     let runOnce = true;
-
-    this.props.bandsVoted.forEach(band => {
-      if (band.band_name === name && runOnce) {
-        runOnce = false;
-        console.log("it's a match, running addVote", runOnce);
-        this.props.dispatch(addVote(band.objectId, band.votes));
-      } else if (band.band_name !== name && runOnce) {
-        runOnce = false;
-        console.log("addNewBand just ran", runOnce);
-        this.props.dispatch(addNewBand(name, url));
-      }
+    console.log(id);
+    let bandId = this.props.bandsVoted.forEach(band => {
+      return band.band_id;
     });
+    if (id === bandId) {
+      console.log("it's a match");
+    } else {
+      this.props.dispatch(addNewBand(name, url, id));
+    }
   }
+  //   this.props.bandsVoted.forEach(band => {
+  //     if (band.band_name === name && runOnce) {
+  //       console.log("it's a match!");
+  //       this.props.dispatch(addVote(band.objectId, band.votes));
+  //       runOnce = false;
+  //     } else if (band.band_name !== name && runOnce) {
+  //       console.log("addNewBand just ran");
+  //       this.props.dispatch(addNewBand(name, url, id));
+  //       runOnce = false;
+  //     }
+  //   });
+  // }
 
   handleSearch(e) {
     e.preventDefault(); //prevents page from reloading

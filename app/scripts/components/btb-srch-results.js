@@ -26,7 +26,7 @@ class BtbSrchResults extends React.Component {
                   <div className="card-content">
                     <BtbVote
                       handleVote={() =>
-                        this.props.handleVote(data.name, bandImage)}
+                        this.props.handleVote(data.name, bandImage, data.id)}
                       tabindex="2"
                     />
                   </div>
