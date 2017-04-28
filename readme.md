@@ -34,14 +34,13 @@ Search Page
 - [X] Button: submits Input with "ENTER" or "onClick"
 - [X] Results: List of bands
   - [X] Each Band: Display IMAGE and BAND NAME
-  - [ ] Tests for any custom functions created on components and actions
-  - [ ] Should be able to vote for band when band is displayed
+
+  - [X] Should be able to vote for band when band is displayed
   - [X] When voted for, save band to server
 ---
 Votes Page
 - [X] Display: Bands that have been voted for
   - [X] Each Band: Display IMAGE and BAND NAME
-  - [ ] Tests for any custom functions created on components and actions
 - [ ] Remove band duplicates
 - [ ] Add votes
 
@@ -70,7 +69,6 @@ Tues
 Wednesday
 - [ ] Voting Functionality
 - [X] Materialize!
-
 Thurs
 - [ ] Polish code
 - [ ] Polish CSS
